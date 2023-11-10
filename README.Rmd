@@ -42,10 +42,10 @@ suppressPackageStartupMessages(library(tidyverse))
                  ))
 
 ## Summary of arithmetic mean on sample data by person
-summarize_by_group_mean(sampleData, "Name")
+Group_mean_summarization(sampleData, "Name")
 
 ## Summary of arithmetic mean on sample data by city and person
-summarize_by_group_mean(sampleData, c(2,1))
+Group_mean_summarization(sampleData, c(2,1))
 ```
 
 
