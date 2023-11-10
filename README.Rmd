@@ -1,0 +1,56 @@
+---
+output: github_document
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# GroupMeanSummarization
+
+The goal of 'R' Package Group Mean Summarization is to provides a **function to calculate the arithmetic mean**. Further, the user can choose to group the data at any single or multiple levels to calculate the mean over those groupings. Moreover, for convenience, the user can select data grouping via column index(es) or column name(s).
+
+## Installation
+
+You can install the development version of Group Mean Summarization like so:
+
+``` {r}
+# install.packages("devtools")
+devtools::install_github("stat545ubc-2023/GroupMeanSummarization")
+
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+suppressPackageStartupMessages(library(GroupMeanSummarization))
+suppressPackageStartupMessages(library(tidyverse))
+
+## Creating sample data
+(sampleData <- data.frame(Name = c("Vir", "Shreya", "Kabir", "Vir", "Kabir"),
+                 TransactionCity = c("Vancouver", "Vancouver", "California", "Seattle", "California"),
+                 TransactionCost = c(100, 50, 80, 100, 40),
+                 ItemsPurchased = c(4,1,4,6,2)
+                 ))
+
+## Summary of arithmetic mean on sample data by person
+summarize_by_group_mean(sampleData, "Name")
+
+## Summary of arithmetic mean on sample data by city and person
+summarize_by_group_mean(sampleData, c(2,1))
+```
+
+
+
+
+
+
+
